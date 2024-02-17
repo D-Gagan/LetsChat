@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
@@ -15,7 +14,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: '888153648277-6al662vpm8h771vtoiqnul5brhc68jg3.apps.googleusercontent.com',
   clientSecret: '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',
-  callbackURL: 'http://localhost:3000/auth/google/callback',
+  callbackURL: 'https://d-gagan.github.io/Chatting/auth/google/callback',
 }, (accessToken, refreshToken, profile, done) => {
   // Save user information in the session
   return done(null, profile);
@@ -38,7 +37,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect('/chat');
+    res.redirect('https://d-gagan.github.io/Chatting/');
   }
 );
 
