@@ -1,0 +1,38 @@
+/* public/styles/style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header, nav, main, footer {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+  }
+  
+  #welcome-message {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
