@@ -14,7 +14,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: '888153648277-6al662vpm8h771vtoiqnul5brhc68jg3.apps.googleusercontent.com',
   clientSecret: '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',
-  callbackURL: 'https://d-gagan.github.io/Chatting/auth/google/callback',
+  callbackURL: 'https://d-gagan.github.io/Chatting/auth/google/callback',',
 }, (accessToken, refreshToken, profile, done) => {
   // Save user information in the session
   return done(null, profile);
@@ -62,6 +62,8 @@ app.use(express.static('public'));
 
 // Server setup
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+const HOST = '0.0.0.0'; // Bind to all network interfaces
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`);
 });
